@@ -1,7 +1,9 @@
 import * as app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
-import 'firebase/firestore'
+
+// TODO - Uncomment firestore
+// import 'firebase/firestore'
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -20,7 +22,9 @@ class Firebase {
         app.initializeApp(config)
         this._auth = app.auth()
         this.db = app.database()
-        this.firestore = app.firestore()
+
+        // TODO - Uncomment firestore
+        // this.firestore = app.firestore()
     }
 
     authenticate = async (email: string, password: string): Promise<void> => {
