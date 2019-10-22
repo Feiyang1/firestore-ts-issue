@@ -3,7 +3,7 @@ import 'firebase/auth'
 import 'firebase/database'
 
 // TODO - Uncomment firestore
-// import 'firebase/firestore'
+import 'firebase/firestore'
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
