@@ -24,7 +24,9 @@ class Firebase {
         this.db = app.database()
 
         // TODO - Uncomment firestore
-        // this.firestore = app.firestore()
+        console.log('bf creating firestore');
+        this.firestore = app.firestore();
+        this.firestore.ensureClientConfigured();
     }
 
     authenticate = async (email: string, password: string): Promise<void> => {
