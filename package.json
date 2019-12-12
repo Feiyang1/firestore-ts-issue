@@ -4,7 +4,9 @@
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
-    "test": "serverless invoke local --function hello"
+    "test": "serverless invoke local --function hello",
+    "predeploy": "npm rebuild --target=10.0.0 --target_arch=x64 --target_platform=linux --target_libc=glibc",
+    "deploy": "serverless deploy"
   },
   "dependencies": {
     "firebase": "^7.1.0",
@@ -17,7 +19,8 @@
     "serverless-webpack": "^5.2.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
-    "webpack": "^4.29.0"
+    "webpack": "^4.29.0",
+    "copy-webpack-plugin": "5.1.1"
   },
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT"

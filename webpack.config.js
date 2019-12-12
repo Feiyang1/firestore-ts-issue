@@ -1,6 +1,7 @@
 const path = require('path')
 const slsw = require('serverless-webpack')
 const webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
@@ -30,5 +31,13 @@ module.exports = {
       }
 
       callback();
-    }]
+    }],
+  plugins: [
+    new CopyPlugin([
+      {
+        from: 'node_modules',
+        to: 'node_modules'
+      }
+    ])
+  ]
 }
